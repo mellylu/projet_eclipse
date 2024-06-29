@@ -1,0 +1,70 @@
+package net.codejava.ws;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Objects;
+
+// L'annotation XmlRootElement va nous permettre de définir le nom de l'élément XML
+// On peut spécifier manuellement le nom dans le XML. Si on ne spécifie rien, nous
+// aurons le nom de la classe Java, dans le nom XML Racine
+@XmlRootElement(name="compte")
+// On ajoute l'annotation XmlAccessorType pour demander à JAXB de scanner les annotations sur les champs automatiquement
+@XmlAccessorType(XmlAccessType.FIELD)
+// Bien que JAXB peut gérer les classes même si la classe n'est pas Serializable,
+// on choisi d'implémenter la classe Serializable afin que la classe Compte soit
+// utilisable par d'autres Middle Wares (par exemple RMI)
+public class Compte implements Serializable{
+	// Déclarations des variables membres
+	private long 	m_long_code;
+	private double 	m_dbl_solde;
+
+	// Attention, on utilise la Date depuis le package Java.util
+	// Attention, on utilise ici l'annotation Transient pour ne pas envoyer la date de création dans les réponses
+	@XmlTransient
+	private Date m_Date_datecreation;
+
+	// Constructeur sans paramètre
+	public Compte() {
+		super();
+	}
+
+	// Constructeur avec paramètres
+	public Compte(
+			/* LONG NUMERO DU COMPTE 	*/ long 	i_long_code, 
+			/* DBL SOLDE DU COMPTE		*/ double 	i_dbl_solde, 
+			/* DATE DE CREATION COMPTE	*/ Date 	i_Date_datecreation
+			) {
+		super();
+
+		this.m_long_code 			= i_long_code;
+		this.m_dbl_solde 			= i_dbl_solde;
+		this.m_Date_datecreation 	= i_Date_datecreation;
+	}
+
+	// GETTERS
+	public long 	get_long_code() 		{return m_long_code;}
+	public double 	get_dbl_solde() 		{return m_dbl_solde;}
+	public Date 	get_Date_dateCreation() {return m_Date_datecreation;}
+
+	// SETTERS
+	private void set_long_code			(Long 	i_long_code) 			{this.m_long_code 			= i_long_code;}
+	private void set_dbl_solde			(double i_dbl_solde) 			{this.m_dbl_solde 			= i_dbl_solde;}
+	private void set_Date_dateCreation	(Date 	i_Date_datecreation) 	{this.m_Date_datecreation 	= i_Date_datecreation;}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(m_long_code);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Compte other = (Compte) obj;
+		return m_long_code == other.m_long_code;
+	}	
+}

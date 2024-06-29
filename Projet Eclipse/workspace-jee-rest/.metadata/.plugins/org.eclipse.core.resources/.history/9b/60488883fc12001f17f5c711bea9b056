@@ -1,0 +1,35 @@
+package net.codejava.ws;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+// On va exposer des opérations avec l'annotation "@Path"
+@Path("/solde")
+public class SoldeResource {
+	// On utilise le système de singleton pour le DAO de stockage des comptes bancaires 
+	private CompteDAO m_ref_dao = CompteDAO.getInstance();
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Montant getSolde(Code code) throws Exception {
+		long l_long_code = code.getCode();
+		double l_dbl_montant = m_ref_dao.getSolde(l_long_code);
+		
+		// On prépare un objet en sortie pour le montant
+		Montant o_Montant = new Montant(l_dbl_montant);
+				
+		return o_Montant; 
+	}
+}

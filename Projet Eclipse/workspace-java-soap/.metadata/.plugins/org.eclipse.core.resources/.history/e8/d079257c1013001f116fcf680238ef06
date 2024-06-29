@@ -1,0 +1,10 @@
+package client_soap;
+
+public class MainClientSoap {
+
+	public static void main(String[] args) {
+		BanqueWS stub = new BanqueServiceService();
+
+	}
+
+}

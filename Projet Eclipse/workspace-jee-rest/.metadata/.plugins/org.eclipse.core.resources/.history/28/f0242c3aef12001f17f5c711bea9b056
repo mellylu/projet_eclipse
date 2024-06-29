@@ -1,0 +1,5 @@
+package net.codejava.client;
+
+public class CompteClient {
+
+}

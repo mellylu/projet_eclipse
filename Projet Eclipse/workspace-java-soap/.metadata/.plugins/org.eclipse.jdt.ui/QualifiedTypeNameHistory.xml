@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlRootElement"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="jakarta.jws.WebService"/>
+    <fullyQualifiedTypeName name="jakarta.jws.WebMethod"/>
+    <fullyQualifiedTypeName name="jakarta.jws.WebParam"/>
+    <fullyQualifiedTypeName name="jakarta.xml.ws.Endpoint"/>
+    <fullyQualifiedTypeName name="server_soap.BanqueService"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlTransient"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAccessorType"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAccessType"/>
+    <fullyQualifiedTypeName name="server_soap.BanqueWS"/>
+    <fullyQualifiedTypeName name="server_soap.BanqueServiceService"/>
+    <fullyQualifiedTypeName name="server_soap.Compte"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

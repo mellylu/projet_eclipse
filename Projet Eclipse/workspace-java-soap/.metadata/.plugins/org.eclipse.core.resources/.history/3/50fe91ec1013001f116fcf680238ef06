@@ -1,0 +1,17 @@
+package client_soap;
+
+import server_soap.BanqueServiceService;
+import server_soap.BanqueWS;
+
+public class MainClientSoap {
+
+	public static void main(String[] args) {
+		BanqueWS stub = (BanqueWS) new BanqueServiceService();
+
+		long l_long_generatedAccount = stub.createAccount(500);
+		
+		System.out.println(l_long_generatedAccount);
+		
+	}
+
+}

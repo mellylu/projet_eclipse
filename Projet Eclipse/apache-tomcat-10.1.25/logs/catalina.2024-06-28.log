@@ -1,0 +1,46 @@
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/10.1.25
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Jun 14 2024 19:31:59 UTC
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               10.1.25.0
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Windows 10
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       10.0
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        C:\Program Files\OpenJDK\openjdk-11.0.13_8
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      11.0.13+8
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Oracle Corporation
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25
+28-Jun-2024 16:25:00.705 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\conf\logging.properties
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25
+28-Jun-2024 16:25:00.737 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\temp
+28-Jun-2024 16:25:00.752 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [2.0.7] en utilisant APR version [1.7.4]
+28-Jun-2024 16:25:00.768 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 3.0.13 30 Jan 2024]
+28-Jun-2024 16:25:01.096 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Jun-2024 16:25:01.144 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [755] millisecondes
+28-Jun-2024 16:25:01.222 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Jun-2024 16:25:01.222 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/10.1.25]
+28-Jun-2024 16:25:01.253 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\docs]
+28-Jun-2024 16:25:02.338 AVERTISSEMENT [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom La création de l'instance de SecureRandom pour le générateur d'id de session en utilisant [SHA1PRNG] a pris [487] millisecondes
+28-Jun-2024 16:25:02.401 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\docs] de l'application web s'est terminé en [1 148] ms
+28-Jun-2024 16:25:02.401 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\examples]
+28-Jun-2024 16:25:02.886 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\examples] de l'application web s'est terminé en [485] ms
+28-Jun-2024 16:25:02.886 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\host-manager]
+28-Jun-2024 16:25:02.964 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\host-manager] de l'application web s'est terminé en [78] ms
+28-Jun-2024 16:25:02.964 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\manager]
+28-Jun-2024 16:25:03.012 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\manager] de l'application web s'est terminé en [48] ms
+28-Jun-2024 16:25:03.012 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\ROOT]
+28-Jun-2024 16:25:03.059 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [C:\Users\melly\OneDrive\Bureau\Projet Eclipse\apache-tomcat-10.1.25\webapps\ROOT] de l'application web s'est terminé en [47] ms
+28-Jun-2024 16:25:03.074 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Jun-2024 16:25:03.434 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [2297] millisecondes
+28-Jun-2024 17:17:12.311 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Jun-2024 17:17:12.736 INFOS [Thread-1] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Jun-2024 17:17:12.822 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Jun-2024 17:17:12.836 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]

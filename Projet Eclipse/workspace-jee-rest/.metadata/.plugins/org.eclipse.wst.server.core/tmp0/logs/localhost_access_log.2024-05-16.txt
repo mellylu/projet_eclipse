@@ -1,0 +1,6 @@
+127.0.0.1 - - [16/May/2024:08:32:47 +0200] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [16/May/2024:08:32:54 +0200] "GET /application.wadl HTTP/1.1" 404 698
+0:0:0:0:0:0:0:1 - - [16/May/2024:08:32:54 +0200] "GET /favicon.ico HTTP/1.1" 404 693
+0:0:0:0:0:0:0:1 - - [16/May/2024:08:33:16 +0200] "GET /server_rest/rest/application.wadl HTTP/1.1" 200 2805
+0:0:0:0:0:0:0:1 - - [16/May/2024:08:33:23 +0200] "GET /server_rest/application.wadl HTTP/1.1" 404 714
+0:0:0:0:0:0:0:1 - - [16/May/2024:08:33:26 +0200] "GET /server_rest/rest/application.wadl HTTP/1.1" 200 2805

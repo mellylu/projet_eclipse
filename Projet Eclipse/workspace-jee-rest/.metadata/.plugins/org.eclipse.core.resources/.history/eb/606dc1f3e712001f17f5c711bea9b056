@@ -1,0 +1,23 @@
+package net.codejava.ws;
+
+public class Montant {
+	private double m_dbl_montant;
+
+	public Montant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Montant(double montant) {
+		super();
+		this.m_dbl_montant = montant;
+	}
+	
+	public double getMontant() {
+		return m_dbl_montant;
+	}
+
+	public void setMontant(double montant) {
+		this.m_dbl_montant = montant;
+	}
+}

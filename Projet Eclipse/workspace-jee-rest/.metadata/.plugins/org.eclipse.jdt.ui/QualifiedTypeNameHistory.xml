@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.glassfish.jersey.client.ClientConfig"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.client.ClientBuilder"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.client.Client"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.core.Response"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.client.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.core.MediaType"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>

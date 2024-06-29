@@ -1,0 +1,20 @@
+package net.codejava.ws;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CompteDAO {
+	private CompteDAO instance = null;
+	
+	// Pour l'instant on met les données dans une Arraylist
+	private List<Compte> m_List_datas = new ArrayList<Compte>();
+	
+	private CompteDAO() {}
+	
+	// Constructeur pour le CompteDAO
+	public static CompteDAO getInstance() {
+		if (instance==null) {
+			instance = new CompteDAO();
+		}
+	}
+}

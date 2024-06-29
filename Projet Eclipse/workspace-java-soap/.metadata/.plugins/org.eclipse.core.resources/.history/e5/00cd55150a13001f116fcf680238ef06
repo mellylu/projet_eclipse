@@ -1,0 +1,14 @@
+package server_soap;
+
+import java.util.Date;
+
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="compte")
+public class Compte {
+	private long code;
+	private double solde;
+	private Date dateCreation;
+	
+	
+}

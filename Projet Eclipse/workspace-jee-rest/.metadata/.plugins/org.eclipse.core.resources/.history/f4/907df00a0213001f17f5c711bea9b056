@@ -1,0 +1,143 @@
+package net.codejava.client;
+
+import java.net.URI;
+import java.util.Random;
+
+import org.glassfish.jersey.client.ClientConfig;
+
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+public class MainClientRest {
+	private static String baseURI_comptes 	= "http://localhost:8080/server_rest/rest/comptes";
+	private static String baseURI_soldes 	= "http://localhost:8080/server_rest/rest/soldes";
+
+	public static void main(String[] args) {
+		testList();
+		
+		// On récupère l'URI de l'élément crée
+		long l_long_generatedAccountCode = testAdd(0);
+		
+		testSolde	(l_long_generatedAccountCode);
+		testUpdate	(l_long_generatedAccountCode, l_int_soldeAleatoire);
+		testGet		(l_long_generatedAccountCode);
+		testDelete	(l_long_generatedAccountCode);
+		testList	();
+
+	}
+	
+	static long testAdd(double i_dbl_montantInitial) {
+		WebTarget target = getWebTarget(baseURI_comptes);
+		
+		Montant l_montant = new Montant(i_dbl_montantInitial);
+		
+		Response response = target.request().post(
+				Entity.entity(l_montant, MediaType.APPLICATION_JSON),
+				Response.class
+				);
+
+		Code l_obj_code = (Code)response.readEntity(Code.class);		
+		
+		long o_long_code = l_obj_code.getCode();
+		
+		return o_long_code;
+	}
+	
+	static void testDelete(long i_long_code) {
+		WebTarget target = getWebTarget(baseURI_comptes);
+		
+		String l_str_code = String.valueOf(i_long_code);
+		
+		Response response = target.path(l_str_code).request().delete(Response.class);
+
+		System.out.println(response);
+	}
+	
+	
+	static void testUpdate(
+			long i_long_code,
+			double i_dbl_nouveauMontant
+			) {
+		WebTarget target = getWebTarget(baseURI_comptes);
+
+		String l_str_code = String.valueOf(i_long_code);
+		
+		Montant l_montant = new Montant (i_dbl_nouveauMontant);
+		
+		Response response = target.path(l_str_code).request().put(
+				Entity.entity(l_montant, MediaType.APPLICATION_JSON),
+				Response.class
+				);
+
+		System.out.println(response);
+	}
+
+	static void testGet(long i_long_code) {
+		WebTarget target = getWebTarget(baseURI_comptes);
+
+		String l_str_code = String.valueOf(i_long_code);
+		
+		Compte compte = target.path(l_str_code)
+		.request()
+		.accept(MediaType.APPLICATION_JSON)
+		.get(Compte.class);
+		
+		System.out.println(compte);
+	}
+	
+	static void testList() {
+		WebTarget target = getWebTarget(baseURI_comptes);
+		
+		String response = target.request()
+		.accept(MediaType.APPLICATION_JSON)
+		.get(String.class);
+		
+		System.out.println(response);
+	}
+	
+	static void testSolde(long i_long_code) {
+		WebTarget target = getWebTarget(baseURI_soldes);
+
+		String l_str_code = String.valueOf(i_long_code);
+		
+		Montant montant = target.path(l_str_code)
+		.request()
+		.accept(MediaType.APPLICATION_JSON)
+		.get(Montant.class);
+		
+		System.out.println(montant);		
+	}
+	
+	static WebTarget getWebTarget(String i_str_URI) {
+		ClientConfig config = new ClientConfig();
+		
+		Client client = ClientBuilder.newClient(config);
+		
+		WebTarget target = client.target(i_str_URI);
+		
+		return target;
+	}
+
+	static long[] createMultipleAccounts() {
+		Random l_random = new Random();
+		
+		int l_int_nbComptesACreer = 1000;
+		
+		long[] o_tab_createdAccountCodes = new long[l_int_nbComptesACreer];
+		
+		for (int i=0;i<l_int_nbComptesACreer;i++) {
+			double l_dbl_soldeAleatoire = l_random.nextDouble(0, 1000);
+			
+			long l_long_createdAccountCode = testAdd(l_dbl_soldeAleatoire);
+			
+			o_tab_createdAccountCodes[i] = l_long_createdAccountCode;
+		}
+		
+		return o_tab_createdAccountCodes;
+	}
+	
+}

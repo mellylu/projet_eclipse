@@ -1,0 +1,48 @@
+package net.codejava.ws;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+// On va exposer des opérations avec l'annotation "@Path"
+@Path("/accounts")
+public class CompteResource {
+	// On utilise le système de singleton pour le DAO de stockage des comptes bancaires 
+	private CompteDAO m_ref_dao = CompteDAO.getInstance();
+	
+	// On définit la méthode REST
+	// On définit le type de donnée produites en sortie de la méthode
+	@GET
+	@Path("/list")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Compte> list() {
+		return m_ref_dao.getComptes();
+	}
+	
+	@POST
+	@Path("/create_account")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response createAccount(Compte i_obj_compte) throws URISyntaxException {
+		double i_dbl_montantInitial = 0;
+		long l_long_generatedAccountCode = m_ref_dao.createAccount(i_dbl_montantInitial);
+		
+		URI uri = new URI("/accounts/" + l_long_generatedAccountCode);
+		
+		// On génère la réponse avcc un ensemble d'automatisme
+		return Response.created(uri).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public double getSolde(long i_long_code) throws Exception {
+		return m_ref_dao.getSolde(i_long_code);
+	}
+}

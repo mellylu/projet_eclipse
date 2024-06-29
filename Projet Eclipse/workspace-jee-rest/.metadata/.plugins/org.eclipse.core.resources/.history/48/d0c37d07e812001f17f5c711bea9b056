@@ -1,0 +1,23 @@
+package net.codejava.ws;
+
+public class Code {
+	private long m_long_code;
+
+	public Code() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Code(long m_long_code) {
+		super();
+		this.m_long_code = m_long_code;
+	}
+	
+	public long getCode() {
+		return m_long_code;
+	}
+
+	public void setCode(long m_long_code) {
+		this.m_long_code = m_long_code;
+	}
+}

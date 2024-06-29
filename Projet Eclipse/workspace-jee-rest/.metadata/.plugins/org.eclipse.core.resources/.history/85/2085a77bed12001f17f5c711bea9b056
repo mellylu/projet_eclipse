@@ -1,0 +1,108 @@
+package net.codejava.ws;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+// On va exposer des opérations avec l'annotation "@Path"
+@Path("/accounts")
+public class CompteResource {
+	// On utilise le système de singleton pour le DAO de stockage des comptes bancaires 
+	private CompteDAO m_ref_dao = CompteDAO.getInstance();
+	
+	// On définit la méthode REST
+	// On définit le type de donnée produites en sortie de la méthode
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Compte> list() {
+		return m_ref_dao.getComptes();
+	}
+	
+	@GET
+	@Path("{id}")
+	public Response get(@PathParam("id") long i_long_id) {
+		try {
+			Compte l_ref_compte = m_ref_dao.getCompte(i_long_id);
+		
+			return Response.ok(l_ref_compte, MediaType.APPLICATION_JSON).build();
+		}
+		catch(Exception e) {
+			return Response.status(Response.Status.NOT_FOUND).build();			
+		}
+	}
+
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response createAccount(Montant montant) throws URISyntaxException {
+		// On récupère le montant fourni
+		double l_dbl_montant = montant.getMontant();
+		
+		// On demande au DAO de créer le compte
+		long l_long_generatedAccountCode = m_ref_dao.createAccount(l_dbl_montant);
+		
+		// On prépare la destination d'accès de l'élément pour l'ajouter dans la réponse
+		URI uri = new URI("/accounts/" + l_long_generatedAccountCode);
+		
+		// On génère la réponse avcc un ensemble d'automatisme
+		return Response.created(uri).build();
+	}
+	
+	@PUT
+	@Path("{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response update(
+			@PathParam("id") long i_long_id,
+			Montant montant
+			) {
+		
+		double l_dbl_nouveauMontant = montant.getMontant();
+		
+		try {
+			m_ref_dao.updateCompte(
+					/* LONG CODE COMPTE A MODIFIER 	*/ i_long_id,
+					/* DBL NOUVEAU MONTANT			*/ l_dbl_nouveauMontant
+					);
+			
+			return Response.ok().build();
+		}
+		catch (Exception e) {
+			return Response.notModified().build();
+		}
+	}
+	
+	@DELETE
+	@Path("{id}")
+	public Response delete(@PathParam("id") long i_long_id) {
+		try {
+			m_ref_dao.deleteCompte(i_long_id);
+			
+		}
+		catch (Exception e) {
+			
+		}
+		
+	}
+	
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public Montant getSolde(Code code) throws Exception {
+//		long l_long_code = code.getCode();
+//		double l_dbl_montant = m_ref_dao.getSolde(l_long_code);
+//		
+//		// On prépare un objet en sortie pour le montant
+//		Montant o_Montant = new Montant(l_dbl_montant);
+//				
+//		return o_Montant; 
+//	}
+}
